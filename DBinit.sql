@@ -1,0 +1,17 @@
+CREATE DATABASE 'piscium' DEFAULT CHARACTER SET utf8;
+
+CREATE TABLE pis_user(
+    user_id INT(8) AUTO_INCREMENT NOT NULL PRIMARY KEY COMMENT 'USER ID',
+    auth_admin TINYINT(1) COMMENT 'USER'S ADMIN AUTHENTICATION AUT'
+) ENGINE = InnoDB;
+
+CREATE TABLE pis_user_profile(
+    user_id INT(8) NOT NULL COMMENT 'USER ID',
+    user_name VARCHAR(32) NOT NULL UNIQUE,
+    user_email VARCHAR(32) NOT NULL PRIMARY KEY,
+    user_phone int,
+    user_password CHAR(32) NOT NULL,
+    user_login_state TINYINT(1) NOT NULL
+) ENGINE = InnoDB;
+
+ALTER TABLE USER_MAIN ADD CONSTRAINT FOREIGN KEY (user_id) REFERENCES USER (user_id);
