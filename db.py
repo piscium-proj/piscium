@@ -1,25 +1,25 @@
 # -*-coding: utf-*-
 
 import pymysql as mariadb
+from dbconfig import dbconnectionsettings
 
-mariadb_connection = mariadb.connect(user='root', password='511', database='')
+mariadb_connection = mariadb.connect(**dbconnectionsettings)
 cursor = mariadb_connection.cursor()
 
 #insert information
-some_id = 4
-is_admin = 0
+some_id = 3
 try:
-    cursor.execute("INSERT INTO USER (user_id, admin) VALUE (%s, %s)", (some_id, is_admin))
+    cursor.execute("INSERT INTO pis_user (user_id, user_admin) VALUE (%s, %s)", (some_id, 1))
 except mariadb.Error as error:
     print ("Error: {}".format(error))
 
 #retrieving information
-cursor.execute("SELECT user_id, admin FROM USER WHERE user_id=%s", (some_id,))
-for user_id, admin in cursor:
-    print ("USER ID: {}, ADMIN: {}".format(user_id, admin))
+cursor.execute("SELECT user_id, user_admin FROM pis_user WHERE user_id=%s", (some_id,))
+for user_id, user_admin in cursor:
+    print ("USER ID: {}, ADMIN: {}".format(user_id, user_admin))
 
 mariadb_connection.commit()
-if is_admin == 1:
+if user_admin == 1:
     autority = "Administrator"
 else:
     autority = "User"
