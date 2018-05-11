@@ -1,12 +1,13 @@
 # -*-coding: utf-*-
 
 import pymysql as mariadb
-from dbconfig import dbconnectionsettings
+from config import mariadb_option
 
-mariadb_connection = mariadb.connect(**dbconnectionsettings)
+mariadb_connection = mariadb.connect(**mariadb_option)
 cursor = mariadb_connection.cursor()
 
 #insert information
+'''
 some_id = 3
 try:
     cursor.execute("INSERT INTO pis_user (user_id, user_admin) VALUE (%s, %s)", (some_id, 1))
@@ -24,3 +25,4 @@ if user_admin == 1:
 else:
     autority = "User"
 print ("The last inserted USRE ID was: {}, His autority is: {} ".format(some_id, autority))
+'''

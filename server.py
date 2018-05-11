@@ -11,5 +11,5 @@ if __name__ == '__main__':
     http_server = tornado.httpserver.HTTPServer(application)
     http_server.listen(tornado.options.options.port)
     loop = tornado.ioloop.IOLoop.instance()
-    #tornado.autoreload.start(loop)
+    tornado.autoreload.start(loop)
     loop.start()

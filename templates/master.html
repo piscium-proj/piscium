@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{{escape(handler.settings["web_title"])}}</title>
-        <link rel="script" href = "{{ static_url("js/index.js") }}" />
-        <link rel="stylesheet" href = "{{ static_url("css/bootstrap.css") }}" type="text/css"/>
-        {% block head %}{% end %}
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{escape(handler.settings["web_title"])}}</title>
+    <link rel="script" href="{{ static_url("../view/js/dist/main.js") }}" type="text/javascript"/>
+    {% block head %}{% end %}
+</head>
 {% block body %}{% end %}
 </html>

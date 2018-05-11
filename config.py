@@ -2,11 +2,30 @@
 
 import os
 
+#web
 settings = dict(
-    web_title = '',
+    web_title = 'Piscium',
     template_path = os.path.join(os.path.dirname(__file__), 'templates'),
     static_path = os.path.join(os.path.dirname(__file__), 'view'),
     cookie_secret = "b'B54pC+IfQvi/URHzbEUM+I4qazxvHEXZgXiRN2lWtBk='",
     xsrf_cookies = True,
     debug = True,
 )
+
+#mariadb
+mariadb_option = dict(
+    host='127.0.0.1',
+    user='admin',
+    password='511',
+    database='piscium'
+)
+
+#redis
+redis_option = dict(
+    host='127.0.0.1',
+    port='6379'
+)
+
+#log
+log_file = os.path.join(os.path.dirname(__file__), "logs/log")
+log_level = "debug"

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block body %}
+
     {% if error %}
     <span style="...">Error: {{ error }}</span>
     {% end %}
@@ -12,5 +13,7 @@
         {% module xsrf_form_html() %}
         <input type="submit">
     </form>
+
     <div id="root"></div>
+
 {% end %}
