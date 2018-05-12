@@ -18,5 +18,4 @@ class Application(tornado.web.Application):
         options.log_file_prefix = config.log_file
         options.logging = config.log_level
 
-
 application = Application()
