@@ -15,7 +15,7 @@ settings = dict(
 #mariadb
 mariadb_option = dict(
     host='127.0.0.1',
-    user='admin',
+    user='root',
     password='511',
     database='piscium'
 )
