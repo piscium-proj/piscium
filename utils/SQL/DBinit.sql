@@ -1,3 +1,5 @@
+CREATE USER mydbusername@localhost IDENTIFIED BY 'mydbuserpwd';
+
 CREATE DATABASE piscium DEFAULT CHARACTER SET utf8;
 
 CREATE TABLE pis_user(
