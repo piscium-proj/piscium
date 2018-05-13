@@ -1,9 +1,10 @@
 #-*-coding: utf-*-
 
 import tornado.web
-from handlers import IndexHandler
+from handlers import *
 
 handlers = [
     (r'/', IndexHandler),
+    (r'/login/', LoginHandler),
     (r'/.*', tornado.web.RedirectHandler,{'url':'/'})
 ]

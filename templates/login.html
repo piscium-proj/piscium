@@ -7,7 +7,7 @@
     {% end %}
 
     <form action="/u/login" method="POST">
-        Email: <input name="email" type="text"><br>
+        Email: <input name="username" type="text"><br>
         Password: <input name="password" type="password"><br>
         {% module xsrf_form_html() %}
         <input type="submit">

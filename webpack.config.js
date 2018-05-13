@@ -6,7 +6,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
-  entry: "./static/scripts/index.jsx",
+  entry: "./static/scripts/app.jsx",
   output: {
     path: path.resolve(__dirname, "static/scripts"),
     filename: "main.js"
