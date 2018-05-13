@@ -1,18 +1,25 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/test.html",
-  filename: "../html/test.html"
+  template: "./static/html/script-off.html",
+  filename: "../html/script-on.html"
 });
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./static/scripts/index.jsx",
   output: {
     path: path.resolve(__dirname, "static/scripts"),
     filename: "main.js"
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
@@ -21,11 +28,18 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader"
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          "css-loader"
+        ]
       }
     ]
   },

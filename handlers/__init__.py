@@ -32,7 +32,7 @@ class BaseHandler(RequestHandler):
     def set_default_headers(self):
         pass
 
-    def write_errenderror(self, status_code, **kwargs):
+    def write_error(self, status_code, **kwargs):
         pass
 
 class IndexHandler(BaseHandler):
