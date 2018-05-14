@@ -11,6 +11,11 @@ module.exports = {
     path: path.resolve(__dirname, "static/scripts"),
     filename: "main.js"
   },
+  resolve: {
+    alias: {
+      scripts: path.resolve(__dirname, "static/scripts")
+    }
+  },
   module: {
     rules: [
       {

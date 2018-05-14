@@ -6,5 +6,5 @@ from handlers import *
 handlers = [
     (r'/', IndexHandler),
     (r'/login/', LoginHandler),
-    (r'/.*', tornado.web.RedirectHandler,{'url':'/'})
+    #(r'/.*', tornado.web.RedirectHandler,{'url':'/'})
 ]
