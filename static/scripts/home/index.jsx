@@ -1,9 +1,14 @@
 import React from 'react';
+import { Button } from 'antd';
 
 class Home extends React.Component{
     render(){
         return (
-            <div>Home</div>
+            <div>
+                <Button className="antd test button">
+                    antd test button
+                </Button>
+            </div>
         )
     }
 }

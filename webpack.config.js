@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./static/html/script-off.html",
-  filename: "../html/script-on.html"
+  template: "./static/html/index.html",
+  filename: "../html/main.html"
 });
 
 module.exports = {
