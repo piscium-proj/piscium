@@ -41,7 +41,7 @@ class IndexHandler(BaseHandler):
 class LoginHandler(BaseHandler):
 
     def get(self, *args, **kwargs):
-        self.render('login.html', error="")
+        self.render('index.html', error="")
         # logging.debug("debug msg")
 
     def post(self):
