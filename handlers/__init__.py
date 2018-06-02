@@ -2,6 +2,8 @@
 
 from tornado.web import RequestHandler
 from handlers.session import Session
+import tornado.escape
+import json
 import logging
 
 class BaseHandler(RequestHandler):
@@ -34,31 +36,32 @@ class BaseHandler(RequestHandler):
         pass
 
 class IndexHandler(BaseHandler):
+
     def get(self, *args, **kwargs):
         self.render('index.html', error="")
         #logging.debug("debug msg")
 
 class LoginHandler(BaseHandler):
 
-    def get(self, *args, **kwargs):
-        self.render('index.html', error="")
-        # logging.debug("debug msg")
+    def post(self, *args, **kwargs):
+        print (self.request.body)
 
-    def post(self):
-        username = self.get_argument("username", "")
-        password = self.get_argument("password", "")
-        # The authenticate method should match  a username and password
-        # to a username and password hash in the database users table.
-        # Waiting for complete this part
-        auth = self.db.authenticate(username, password)
 
-        def set_current_user(self, user):
-            if user:
-                self.set_secure_cookie("user", tornado.escape.json_encode(user))
-
-        if auth:
-            self.set_current_user(username)
-            self.redirect(self.get_argument("next", u"/"))
-        else:
-            error_msg = u"?error=" + tornado.escape.url_escape("Login incorrect")
-            self.redirect(u"/login") + error_msg
+    # def post(self):
+    #     username = self.get_argument("username", "")
+    #     password = self.get_argument("password", "")
+    #     # The authenticate method should match  a username and password
+    #     # to a username and password hash in the database users table.
+    #     # Waiting for complete this part
+    #     auth = self.db.authenticate(username, password)
+    #
+    #     def set_current_user(self, user):
+    #         if user:
+    #             self.set_secure_cookie("user", tornado.escape.json_encode(user))
+    #
+    #     if auth:
+    #         self.set_current_user(username)
+    #         self.redirect(self.get_argument("next", u"/"))
+    #     else:
+    #         error_msg = u"?error=" + tornado.escape.url_escape("Login incorrect")
+    #         self.redirect(u"/login") + error_msg

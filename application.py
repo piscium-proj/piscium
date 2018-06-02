@@ -17,8 +17,8 @@ class Application(tornado.web.Application):
         tornado.web.Application.__init__(self, handlers, **config.settings)
         self.db = mariadb_connection
         self.redis = redis_connection
-        options.log_file_prefix = config.log_file
-        options.logging = config.log_level
+        # options.log_file_prefix = config.log_file
+        # options.logging = config.log_level
 
 
 application = Application()

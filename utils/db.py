@@ -26,3 +26,4 @@ else:
     autority = "User"
 print ("The last inserted USRE ID was: {}, His autority is: {} ".format(some_id, autority))
 '''
+

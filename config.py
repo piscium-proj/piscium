@@ -8,7 +8,7 @@ settings = dict(
     template_path = os.path.join(os.path.dirname(__file__), 'template'),
     static_path = os.path.join(os.path.dirname(__file__), 'static'),
     cookie_secret = "b'B54pC+IfQvi/URHzbEUM+I4qazxvHEXZgXiRN2lWtBk='",
-    xsrf_cookies = True,
+    xsrf_cookies = False,
     debug = True,
 )
 
