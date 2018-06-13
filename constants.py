@@ -1,1 +1,0 @@
-SESSION_EXPIRES_SECONDS = 86400 #session data validated period

@@ -6,5 +6,8 @@ from handlers import *
 handlers = [
     (r'/', IndexHandler),
     (r'/api/login/account', LoginHandler),
-    (r'/.*', tornado.web.RedirectHandler,{'url':'/'})
+    (r'/api/users', UserListHandler),
+    (r'/api/people/(.*)', PeopleHandler),
+    #(r'/api/register', RegisterHandler),
+    (r'/.*', IndexHandler),
 ]
